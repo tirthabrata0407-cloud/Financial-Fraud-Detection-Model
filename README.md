@@ -4,9 +4,10 @@
   <img src="Project_workflow_finan.png" alt="Project Workflow" width="100%" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
 </div>
 --
-# 🌐 Live Deployment
+##  Live Deployment
 
 ### 🔗 Streamlit App
+
 https://financial-fraud-detection-model-vpeitz9ssc4mjfqsor2vig.streamlit.app/
 
 ### 🔗 GitHub Repository
@@ -35,7 +36,11 @@ https://github.com/tirthabrata0407-cloud/Financial-Fraud-Detection-Model#
 | **Model Storage** | Joblib |
 | **Database** | SQLite |
 
-```text
+---
+---
+
+## Project Structure
+```
 Financial-Fraud-Detection-model/
 │
 ├── models/
@@ -47,6 +52,8 @@ Financial-Fraud-Detection-model/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
+
 ---
 
 ##  Features
@@ -73,25 +80,30 @@ Financial-Fraud-Detection-model/
 ---
 
 ##  Machine Learning Workflow
+
 ### 1. Data Preprocessing
 * Data cleaning
 * Duplicate removal
 * Missing value handling
 * Feature transformation
+  
 ### 2. Feature Engineering
 * Transaction behavior analysis
 * Balance change calculations
 * Risk indicator generation
+  
 ### 3. Model Training
 * Train-Test Split
 * Random Forest Classifier
 * Model evaluation
+  
 ### 4. Fraud Prediction
 * Transaction classification
 * Fraud probability estimation
 * Risk assessment
 ---
 ##  Key Insights
+
 The system helps identify:
 * Suspicious transaction patterns
 * High-risk account activities
@@ -100,8 +112,10 @@ The system helps identify:
 * Fraud-prone transaction categories
 ---
 ##  Installation
+
 ### Clone Repository
 ```bash
+
 git clone https://github.com/laharisetty29/Financial-Fraud-Detection.git
 cd Financial-Fraud-Detection-model
 ```
