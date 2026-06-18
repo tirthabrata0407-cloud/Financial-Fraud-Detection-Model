@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 
 # ─── PAGE CONFIG ───────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Fraud Detection System",
+    page_title="Financial Fraud Detection Model",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
