@@ -7,6 +7,7 @@ import json
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import (
     classification_report, confusion_matrix,
     roc_auc_score, f1_score, precision_score, recall_score, accuracy_score
@@ -81,14 +82,37 @@ if __name__ == "__main__":
     X_train, X_test, y_train, y_test = load_data()
     print(f"  Train size: {len(X_train)} | Test size: {len(X_test)}")
 
+    # Initialize and fit scaler on training data
+    scaler = StandardScaler()
+    X_train_scaled = scaler.fit_transform(X_train)
+    X_test_scaled = scaler.transform(X_test)
+    
+    # Save scaler and feature columns for app.py
+    joblib.dump(scaler, f"{MODEL_DIR}/scaler.pkl")
+    print("  Scaler saved to disk.")
+    
+    # Feature names (18 features based on app.py prediction logic)
+    feature_cols = [
+        "amount", "old_bal_org", "new_bal_org", "old_bal_dest", "new_bal_dest",
+        "hour", "is_weekend",
+        "sender_balance_change", "receiver_balance_change",
+        "sender_utilization", "receiver_growth",
+        "is_large_transaction",
+        "sender_transaction_count", "receiver_transaction_count",
+        "account_drained", "new_receiver_account",
+        "high_risk_type", "type"
+    ]
+    joblib.dump(feature_cols, f"{MODEL_DIR}/feature_cols.pkl")
+    print("  Feature columns saved to disk.")
+
     models  = get_models()
     results = {}
     best_model_name, best_f1, best_model = None, 0, None
 
     for name, model in models.items():
         print(f"\nTraining {name}...")
-        model.fit(X_train, y_train)
-        metrics = evaluate(model, X_test, y_test)
+        model.fit(X_train_scaled, y_train)
+        metrics = evaluate(model, X_test_scaled, y_test)
         results[name] = metrics
 
         print(f"  Accuracy : {metrics['accuracy']}%")
