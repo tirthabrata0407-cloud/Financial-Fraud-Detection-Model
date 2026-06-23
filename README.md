@@ -4,15 +4,18 @@
   <img src="Project_workflow_finan.png" alt="Project Workflow" width="100%" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
  </div>
 --
-##  Live Deployment
 
-### 🔗 Streamlit App
+## 🌐 Live Deployment
+
+🔗 **Streamlit App**
 
 https://financial-fraud-detection-model-vpeitz9ssc4mjfqsor2vig.streamlit.app/
 
-### 🔗 GitHub Repository
+🔗 **GitHub Repository**
 
 https://github.com/tirthabrata0407-cloud/Financial-Fraud-Detection-Model#
+
+---
 
 ##  Objectives
 
